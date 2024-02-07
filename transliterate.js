@@ -73,17 +73,21 @@ function transliterate() {
     document.getElementById("textarea2").value = resultLaFrak;
     document.getElementById("textarea2").innerHTML = resultLaFrak;
   } else if (localStorage.getItem("direction") == "latinFraktur2latin") {
-    const LatinFrakturToLatin = { " ": " ", "।": ".", "॥": ".", ",": ",", ";": ";", "?": "?", "!": "!", "\"": "\"", "'": "'", "(": "(", ")": ")", ":": ":", "+": "+", "=": "=", "/": "/", "-": "-", "<": "<", ">": ">", "*": "*", "|": "|", "\\": "\\", "₹": "₹", "{": "{", "}": "}", "[": "[", "]": "]", "_": "_", "%": "%", "@": "@", "ˆ": "ˆ", "`": "`", "´": "´", "˜": "˜", "·": "·", "˙": "˙", "¯": "¯", "¨": "¨", "˚": "˚", "˝": "˝", "ˇ": "ˇ", "¸": "¸", "˛": "˛", "˘": "˘", "’": "’", "𝔞":"a","𝔄":"A","𝔟":"b","𝔅":"B","𝔠":"c","ℭ":"C","𝔡":"d","𝔇":"D","𝔢":"e","𝔈":"E","𝔣":"f","𝔉":"F","𝔤":"g","𝔊":"G","𝔥":"h","ℌ":"H","𝔦":"i","ℑ":"I","𝔧":"j","𝔍":"J","𝔨":"k","𝔎":"K","𝔩":"l","𝔏":"L","𝔪":"m","𝔐":"M","𝔫":"n","𝔑":"N","𝔬":"o","𝔒":"O","𝔭":"p","𝔓":"P","𝔮":"q","𝔔":"Q","𝔯":"r","ℜ":"R","𝔰":"s","𝔖":"S","𝔱":"t","𝔗":"T","𝔲":"u","𝔘":"U","𝔳":"v","𝔙":"V","𝔴":"w","𝔚":"W","𝔵":"x","𝔛":"X","𝔶":"y","𝔜":"Y","𝔷":"z","ℨ":"z" };
+    const latinFrakturToLatin = { " ": " ", "।": ".", "॥": ".", ",": ",", ";": ";", "?": "?", "!": "!", "\"": "\"", "'": "'", "(": "(", ")": ")", ":": ":", "+": "+", "=": "=", "/": "/", "-": "-", "<": "<", ">": ">", "*": "*", "|": "|", "\\": "\\", "₹": "₹", "{": "{", "}": "}", "[": "[", "]": "]", "_": "_", "%": "%", "@": "@", "ˆ": "ˆ", "`": "`", "´": "´", "˜": "˜", "·": "·", "˙": "˙", "¯": "¯", "¨": "¨", "˚": "˚", "˝": "˝", "ˇ": "ˇ", "¸": "¸", "˛": "˛", "˘": "˘", "’": "’", "𝔞":"a","\ud835\udd1E":"a","𝔄":"A","\ud835\udd04":"A","𝔟":"b","\ud835\udd1F":"b","𝔅":"B","\ud835\udd05":"B","𝔠":"c","\ud835\udd20":"c","ℭ":"C","\ud835\udd06":"C","𝔡":"d","\ud835\udd21":"d","𝔇":"D","\ud835\udd07":"D","𝔢":"e","\ud835\udd22":"e","𝔈":"E","\ud835\udd08":"E","𝔣":"f","\ud835\udd23":"f","𝔉":"F","\ud835\udd09":"F","𝔤":"g","\ud835\udd24":"g","𝔊":"G","\ud835\udd0A":"G","𝔥":"h","\ud835\udd25":"h","ℌ":"H","\ud835\udd0B":"H","𝔦":"i","\ud835\udd26":"i","ℑ":"I","\ud835\udd0C":"I","𝔧":"j","\ud835\udd27":"j","𝔍":"J","\ud835\udd0D":"J","𝔨":"k","\ud835\udd28":"k","𝔎":"K","\ud835\udd0E":"K","𝔩":"l","\ud835\udd29":"l","𝔏":"L","\ud835\udd0F":"L","𝔪":"m","\ud835\udd2A":"m","𝔐":"M","\ud835\udd10":"M","𝔫":"n","\ud835\udd2B":"n","𝔑":"N","\ud835\udd11":"N","𝔬":"o","\ud835\udd2C":"o","𝔒":"O","\ud835\udd12":"O","𝔭":"p","\ud835\udd2D":"p","𝔓":"P","\ud835\udd13":"P","𝔮":"q","\ud835\udd2E":"q","𝔔":"Q","\ud835\udd14":"Q","𝔯":"r","\ud835\udd2F":"r","ℜ":"R","\ud835\udd15":"R","𝔰":"s","\ud835\udd30":"s","𝔖":"S","\ud835\udd16":"S","𝔱":"t","\ud835\udd31":"t","𝔗":"T","\ud835\udd17":"T","𝔲":"u","\ud835\udd32":"u","𝔘":"U","\ud835\udd18":"U","𝔳":"v","\ud835\udd33":"v","𝔙":"V","\ud835\udd19":"V","𝔴":"w","\ud835\udd34":"w","𝔚":"W","\ud835\udd1A":"W","𝔵":"x","\ud835\udd35":"x","𝔛":"X","\ud835\udd1B":"X","𝔶":"y","\ud835\udd36":"y","𝔜":"Y","\ud835\udd1C":"Y","𝔷":"z","\ud835\udd37":"z","ℨ":"Z","\ud835\udd1D":"Z" };
 
     let resultLa = "";
-    let textLaTemp = document.getElementById("textarea2").value;
-    for (let u = 0 ; u < textLaTemp.length ; ) {
-      if (textLaTemp[u].indexOf("\n") > -1) {
+    let textLaFrak = document.getElementById("textarea2").value;
+    for (let u = 0 ; u < textLaFrak.length ; u++ ) {
+      if (textLaFrak[u].indexOf("\n") > -1) {
         resultLa = resultLa + "\n";
-        u = u + 1;
-      } else {
-        u = u + 1;
+      } else if (latinFrakturToLatin[textLaFrak[u] + textLaFrak[u+1]] != undefined && latinFrakturToLatin[textLaFrak[u] + textLaFrak[u+1]] != null && textLaFrak[u] != "" &&  textLaFrak[u+1] != "") { // Multiple Unicode Points
+        resultLa = resultLa + latinFrakturToLatin[textLaFrak[u] + textLaFrak[u+1]];
+        u++;
+      } else if (latinFrakturToLatin[textLaFrak[u]] != undefined && latinFrakturToLatin[textLaFrak[u]] != null && textLaFrak[u] != "") { // Default Single Character
+        resultLa = resultLa + latinFrakturToLatin[textLaFrak[u]];
       }
+      //console.log(" " + textLaFrak[u].charCodeAt(0) + " \n")
+      //console.log(" " + textLaFrak[u].toString(16) + " \n")
     }
     document.getElementById("textarea1").value = resultLa;
     document.getElementById("textarea1").innerHTML = resultLa;
