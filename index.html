@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">  
+    <title>𝔏𝔞𝔱𝔦𝔫 𝔉𝔯𝔞𝔨𝔱𝔲𝔯 Transliterator</title>
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="𝔏𝔞𝔱𝔦𝔫 𝔉𝔯𝔞𝔨𝔱𝔲𝔯 - Transliterator" />
+    <meta property="og:image"              content="Roman_Empire.png" />
+    <meta property="og:description"        content=" Latin 𝔏𝔞𝔱𝔦𝔫 𝔉𝔯𝔞𝔨𝔱𝔲𝔯 " data-qmeta="keywords">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="Roman_Empire.png">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <table class="tab">
+          <tr>
+            <td class="widthOfTab ">
+              <button class="tablinks" onclick="openTab(event, 'Latin')" id="defaultOpen">Latin</button>
+            </td>
+            <td class="widthOfTab textLatinFraktur alignIcon">
+              <span class="tablinks latinFrakturTab">𝔉𝔯𝔞𝔨𝔱𝔲𝔯</span>
+            </td>
+          </tr>
+        </table>
+        <div class="text-input">
+          <div id="Latin" class="tabcontent currentTab" dir="ltr">
+            <textarea spellcheck="false" id="textarea1" class="from-text" placeholder="Latin  
+            This is a sentence in Latin" onkeyup="transliterate()"></textarea>
+          </div>
+          <div id="LatinFraktur" class="latinFrakturTabText" dir="rtl">
+            <textarea spellcheck="false" id="textarea2" readonly class="to-text" placeholder="𝔏𝔞𝔱𝔦𝔫 𝔉𝔯𝔞𝔨𝔱𝔲𝔯 
+            𝔗𝔥𝔦𝔰 𝔦𝔰 𝔞 𝔰𝔢𝔫𝔱𝔢𝔫𝔠𝔢 𝔦𝔫 𝔏𝔞𝔱𝔦𝔫" dir="ltr" onkeyup="transliterate()"></textarea>
+          </div>
+        </div>
+        <ul class="controls">
+          <li class="row from">
+            <div class="icons tooltip" onmousedown="show1()">
+              <i id="from" class="fas fa-copy" onclick="copyContent1()"></i>
+              <div id="tooltip1" onmouseout="hide()" class="tooltiptext">
+                <span class="latinCopyText">Copy Transliteration text - 𝔏𝔞𝔱𝔦𝔫 𝔉𝔯𝔞𝔨𝔱𝔲𝔯</span>
+              </div>
+            </div>
+          </li>
+          <li class="exchange">
+            <i class="fas fa-exchange-alt" onclick="swapTransliteration()"></i>
+          </li>
+          <li class="row to">
+            <div class="icons tooltip" onmousedown="show2()">
+              <i id="to" class="fas fa-copy" onclick="copyContent2()"></i>
+              <div id="tooltip2" onmouseout="hide()" class="tooltiptext">
+                <span class="textLatinFraktur">Copy 𝔏𝔞𝔱𝔦𝔫 𝔉𝔯𝔞𝔨𝔱𝔲𝔯</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <button onclick="transliterate()"><span class="footerLatin">Latin</span> | <span class="footerLatinFraktur">𝔏𝔞𝔱𝔦𝔫</span></button>
+    </div>
+    
+    <div class="footerOfPage">
+      &nbsp;&nbsp;&nbsp;<img src="Roman_Empire.png" alt="𝔏𝔞𝔱𝔦𝔫 𝔉𝔯𝔞𝔨𝔱𝔲𝔯 - World Scripts Explorer" class="footerImage" height="50px" width="40px"/>&nbsp;&nbsp;&nbsp;<a href="https://worldscriptsexplorer.page/latf" target="_blank">𝔏𝔞𝔱𝔦𝔫 𝔉𝔯𝔞𝔨𝔱𝔲𝔯</a>&nbsp;&nbsp;&nbsp;2023 yshant&nbsp;&nbsp;&nbsp;
+    </div>
+    <script src="transliterate.js"></script>
+  </body>
+</html>
